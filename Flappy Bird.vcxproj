@@ -154,6 +154,16 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\Obstacle.cpp" />
+    <ClCompile Include="src\Player.cpp" />
+    <ClCompile Include="src\RunGame.cpp" />
+    <ClCompile Include="src\ScreenManager.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Obstacle.h" />
+    <ClInclude Include="src\Player.h" />
+    <ClInclude Include="src\RunGame.h" />
+    <ClInclude Include="src\ScreenManager.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
