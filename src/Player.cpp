@@ -17,11 +17,13 @@ namespace rd
 		bird.size.x = 50;
 		bird.size.y = 50;
 		bird.rotation = 0;
-		bird.radius = 50;
+		bird.radius = 40;
 		bird.score = 0;
+		bird.velocity = 300.0f;
+		bird.jumpForce = -200.0f;
 		bird.isAlive = true;
 
-		bird.textPosition.x = 1210;
+		bird.textPosition.x = 1200;
 		bird.textPosition.y = 730;
 		bird.fontSize = 40;
 		bird.spacing = 1;
@@ -31,14 +33,14 @@ namespace rd
 	{
 		isPlayerAlive();
 
-		if (IsKeyDown(KEY_UP))
+		if (IsKeyPressed(KEY_SPACE))
 		{
-			bird.position.y -= delta * MAX_PLAYER_SPEED;
+			bird.velocity = bird.jumpForce;
 		}
-		else if (IsKeyDown(KEY_DOWN))
-		{
-			bird.position.y += delta * MAX_PLAYER_SPEED;
-		}
+
+		//VELOCITY:
+		bird.velocity += GRAVITY * delta;
+		bird.position.y += delta * bird.velocity;
 
 		if (bird.position.y + bird.radius > WINDOW_HEIGHT)
 		{
@@ -46,6 +48,7 @@ namespace rd
 		}
 		else if (bird.position.y - bird.radius < 0)
 		{
+			bird.velocity = 0;
 			bird.position.y = 0 + bird.radius;
 		}
 	}
@@ -53,15 +56,16 @@ namespace rd
 	void PlayerDraw(Font font)
 	{
 		DrawRectangleV(bird.position, bird.size, ORANGE); // x, y, width, height, color
-		DrawCircleV(bird.position, bird.radius, YELLOW);
+	//	DrawCircleV(bird.position, bird.radius, YELLOW);
 		DrawTextEx(font, TextFormat("v0.1"), bird.textPosition, bird.fontSize, bird.spacing, BLACK);
 	}
 
 	void isPlayerAlive()
 	{
-		if (CheckRectangleCollision(bird.position, bird.size, pipe.position, pipe.size))
+		if (CheckRectangleCollision(bird.position, bird.size, pipeOne.position, pipeOne.size) ||
+			CheckRectangleCollision(bird.position, bird.size, pipeTwo.position, pipeTwo.size))
 		{
-			PlayerInit(); 
+			PlayerInit();
 			ObstacleInit();
 		}
 	}
