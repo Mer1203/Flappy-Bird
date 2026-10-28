@@ -1,11 +1,12 @@
 #include "ScreenManager.h"
 #include "raylib.h"
 #include "Player.h"
-
-Screen currentScreen = Screen::Play;
+#include "Obstacle.h"
 
 namespace rd
 {
+	Screen currentScreen = Screen::Play;
+
 	void Update(float delta)
 	{
 		switch (currentScreen)
@@ -14,6 +15,7 @@ namespace rd
 			break;
 		case Screen::Play:
 			PlayerUpdate(delta);
+			ObstacleUpdate(delta);
 			break;
 		case Screen::Rules:
 			break;
@@ -42,6 +44,7 @@ namespace rd
 			break;
 		case Screen::Play:
 			PlayerDraw(font);
+			ObstacleDraw();
 			break;
 		case Screen::Rules:
 			break;

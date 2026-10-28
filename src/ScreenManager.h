@@ -1,5 +1,6 @@
 #pragma once
 #include "raylib.h"
+
 namespace rd
 {
 	enum class Screen

@@ -1,10 +1,10 @@
 #include "Player.h"
 #include "RunGame.h"
 
-Player bird;
-
 namespace rd
 {
+	Player bird;
+
 	void PlayerInit()
 	{
 		bird.position.x = 200;
@@ -28,11 +28,11 @@ namespace rd
 	{
 		if (IsKeyDown(KEY_UP))
 		{
-			bird.position.y -= delta * MAX_SPEED;
+			bird.position.y -= delta * MAX_PLAYER_SPEED;
 		}
 		else if (IsKeyDown(KEY_DOWN))
 		{
-			bird.position.y += delta * MAX_SPEED;
+			bird.position.y += delta * MAX_PLAYER_SPEED;
 		}
 
 		if (bird.position.y + bird.radius > WINDOW_HEIGHT)
