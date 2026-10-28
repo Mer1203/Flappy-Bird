@@ -1,19 +1,21 @@
 #pragma once
 #include "raylib.h"
-
-enum class Screen
+namespace rd
 {
-	Menu = 0,
-	Play,
-	Rules,
-	Settings,
-	Credits,
-	Exit,
-	Pause,
-	GameOver
-};
+	enum class Screen
+	{
+		Menu = 0,
+		Play,
+		Rules,
+		Settings,
+		Credits,
+		Exit,
+		Pause,
+		GameOver
+	};
 
-extern Screen currentScreen;
+	extern Screen currentScreen;
 
-void Update(float delta);
-void Draw(Font font);
+	void Update(float delta);
+	void Draw(Font font);
+}

@@ -4,58 +4,61 @@
 
 Screen currentScreen = Screen::Play;
 
-void Update(float delta)
+namespace rd
 {
-	switch (currentScreen)
+	void Update(float delta)
 	{
-	case Screen::Menu:
-		break;
-	case Screen::Play:
-		PlayerUpdate(delta);
-		break;
-	case Screen::Rules:
-		break;
-	case Screen::Settings:
-		break;
-	case Screen::Credits:
-		break;
-	case Screen::Exit:
-		break;
-	case Screen::Pause:
-		break;
-	case Screen::GameOver:
-		break;
-	default:
-		break;
-	}
-}
-
-void Draw(Font font)
-{
-	BeginDrawing();
-
-	switch (currentScreen)
-	{
-	case Screen::Menu:
-		break;
-	case Screen::Play:
-		PlayerDraw(font);
-		break;
-	case Screen::Rules:
-		break;
-	case Screen::Settings:
-		break;
-	case Screen::Credits:
-		break;
-	case Screen::Exit:
-		break;
-	case Screen::Pause:
-		break;
-	case Screen::GameOver:
-		break;
-	default:
-		break;
+		switch (currentScreen)
+		{
+		case Screen::Menu:
+			break;
+		case Screen::Play:
+			PlayerUpdate(delta);
+			break;
+		case Screen::Rules:
+			break;
+		case Screen::Settings:
+			break;
+		case Screen::Credits:
+			break;
+		case Screen::Exit:
+			break;
+		case Screen::Pause:
+			break;
+		case Screen::GameOver:
+			break;
+		default:
+			break;
+		}
 	}
 
-	EndDrawing();
+	void Draw(Font font)
+	{
+		BeginDrawing();
+
+		switch (currentScreen)
+		{
+		case Screen::Menu:
+			break;
+		case Screen::Play:
+			PlayerDraw(font);
+			break;
+		case Screen::Rules:
+			break;
+		case Screen::Settings:
+			break;
+		case Screen::Credits:
+			break;
+		case Screen::Exit:
+			break;
+		case Screen::Pause:
+			break;
+		case Screen::GameOver:
+			break;
+		default:
+			break;
+		}
+
+		EndDrawing();
+	}
 }

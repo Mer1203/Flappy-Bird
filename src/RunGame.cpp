@@ -3,24 +3,27 @@
 #include "ScreenManager.h"
 #include "Player.h"
 
-void RunGame()
+namespace rd
 {
-	float deltaTime = 0;
-
-	Font font = LoadFont("res/font");
-	InitWindow(WINDOW_WIDTH, WINDOW_HEIGHT, "Flappy Bird");
-
-	PlayerInit();
-	while (!WindowShouldClose())
+	void RunGame()
 	{
-		ClearBackground(WHITE);
-		deltaTime = GetFrameTime();
+		float deltaTime = 0;
 
-		Update(deltaTime);
-		Draw(font);
+		Font font = LoadFont("res/font");
+		InitWindow(WINDOW_WIDTH, WINDOW_HEIGHT, "Flappy Bird");
+
+		PlayerInit();
+		while (!WindowShouldClose())
+		{
+			ClearBackground(WHITE);
+			deltaTime = GetFrameTime();
+
+			Update(deltaTime);
+			Draw(font);
+		}
+
+		UnloadFont(font);
+
+		CloseWindow();
 	}
-
-	UnloadFont(font);
-
-	CloseWindow();
 }
