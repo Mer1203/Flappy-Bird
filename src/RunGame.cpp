@@ -13,8 +13,8 @@ namespace rd
 		srand(static_cast<int>(time(nullptr)));
 		float deltaTime = 0;
 
-		Font font = LoadFont("res/font");
 		InitWindow(WINDOW_WIDTH, WINDOW_HEIGHT, "Flappy Bird");
+		Font font = LoadFont("res/font/Muroslant.otf");
 
 		PlayerInit();
 		ObstacleInit();
