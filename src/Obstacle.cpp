@@ -7,35 +7,45 @@
 
 namespace rd
 {
-	Obstacle pipe;
+	Obstacle pipeOne;
+	Obstacle pipeTwo;
 
 	void ObstacleInit()
 	{
-		pipe.position.x = WINDOW_WIDTH;
-		pipe.position.y = 700;
-		pipe.size.x = 80;
-		pipe.size.y = WINDOW_HEIGHT;
-	}	
+		pipeOne.position.x = WINDOW_WIDTH;
+		pipeOne.position.y = 0;
+		pipeOne.size.x = 80;
+		pipeOne.size.y = 0;
+
+		pipeTwo.position.x = WINDOW_WIDTH;
+		pipeTwo.position.y = 0;
+		pipeTwo.size.x = 80;
+		pipeTwo.size.y = 0;
+	}
 
 	void ObstacleUpdate(float delta)
 	{
-		if (!bird.isAlive)
-		{
-			ObstacleInit();
-		}
+		pipeOne.position.x -= delta * MAX_OBSTACLE_SPEED;
+		pipeTwo.position.x -= delta * MAX_OBSTACLE_SPEED;
 
-		pipe.position.x -= delta * MAX_OBSTACLE_SPEED;
-		
-		if (pipe.position.x + pipe.size.x < 0)
+		if (pipeOne.position.x + pipeOne.size.x < 0)
 		{
-			pipe.position.y = static_cast<float>(rand()% (700 - 200 + 1) + 200);
-			pipe.position.x = WINDOW_WIDTH;
+			pipeOne.position.y = static_cast<float>(rand() % (700 - 200 + 1) + 200);
+			pipeOne.size.y = WINDOW_HEIGHT - pipeOne.position.y;
+			pipeOne.position.x = WINDOW_WIDTH;
+		}
+		if (pipeTwo.position.x + pipeTwo.size.x < 0)
+		{
+			pipeTwo.position.y = 0.0f;
+			pipeTwo.size.y = (pipeOne.position.y - 200);
+			pipeTwo.position.x = WINDOW_WIDTH;
 		}
 
 	}
 
 	void ObstacleDraw()
 	{
-		DrawRectangleV(pipe.position, pipe.size,RED);
+		DrawRectangleV(pipeOne.position, pipeOne.size, RED);
+		DrawRectangleV(pipeTwo.position, pipeTwo.size, RED);
 	}
 }

@@ -11,7 +11,8 @@ namespace rd
 
 	const int MAX_OBSTACLE_SPEED = 300;
 
-	extern Obstacle pipe;
+	extern Obstacle pipeOne;
+	extern Obstacle pipeTwo;
 
 	void ObstacleInit();
 	void ObstacleUpdate(float delta);
