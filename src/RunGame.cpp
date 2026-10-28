@@ -4,6 +4,7 @@
 
 void RunGame()
 {
+	Font font = LoadFont("res/font");
 	InitWindow(WINDOW_WIDTH, WINDOW_HEIGHT, "Flappy Bird");
 
 	while (!WindowShouldClose())
@@ -11,9 +12,10 @@ void RunGame()
 		ClearBackground(WHITE);
 
 		Update();
-		Draw();
+		Draw(font);
 	}
 
-	CloseWindow();
+	UnloadFont(font);
 
+	CloseWindow();
 }
