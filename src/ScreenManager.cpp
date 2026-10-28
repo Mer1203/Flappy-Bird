@@ -1,15 +1,17 @@
 #include "ScreenManager.h"
 #include "raylib.h"
+#include "Player.h"
 
 Screen currentScreen = Screen::Play;
 
-void Update()
+void Update(float delta)
 {
 	switch (currentScreen)
 	{
 	case Screen::Menu:
 		break;
 	case Screen::Play:
+		PlayerUpdate(delta);
 		break;
 	case Screen::Rules:
 		break;
@@ -28,7 +30,7 @@ void Update()
 	}
 }
 
-void Draw()
+void Draw(Font font)
 {
 	BeginDrawing();
 
@@ -37,6 +39,7 @@ void Draw()
 	case Screen::Menu:
 		break;
 	case Screen::Play:
+		PlayerDraw(font);
 		break;
 	case Screen::Rules:
 		break;

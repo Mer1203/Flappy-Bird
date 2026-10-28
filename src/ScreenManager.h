@@ -1,4 +1,5 @@
 #pragma once
+#include "raylib.h"
 
 enum class Screen
 {
@@ -14,5 +15,5 @@ enum class Screen
 
 extern Screen currentScreen;
 
-void Update();
-void Draw();
+void Update(float delta);
+void Draw(Font font);

@@ -1,4 +1,5 @@
 #include "Player.h"
+#include "RunGame.h"
 
 Player bird;
 
@@ -14,15 +15,37 @@ void PlayerInit()
 	bird.radius = 50;
 	bird.score = 0;
 	bird.isAlive = true;
+
+	bird.textPosition.x = 1210;
+	bird.textPosition.y = 730;
+	bird.fontSize = 40;
+	bird.spacing = 1;
 }
 
-void PlayerUpdate()
+void PlayerUpdate(float delta)
 {
+	if (IsKeyDown(KEY_UP))
+	{
+		bird.position.y -= delta * MAX_SPEED;
+	}
+	else if (IsKeyDown(KEY_DOWN))
+	{
+		bird.position.y += delta * MAX_SPEED;
+	}
 
+	if (bird.position.y + bird.radius > WINDOW_HEIGHT)
+	{
+		bird.position.y = WINDOW_HEIGHT - bird.radius;
+	}
+	else if (bird.position.y - bird.radius < 0)
+	{
+		bird.position.y = 0 + bird.radius;
+	}
 }
 
-void PlayerDraw()
+void PlayerDraw(Font font)
 {
-	DrawRectangle(bird.position.x, bird.position.y, bird.size.x, bird.size.y, BLUE); // x, y, width, height, color
-	DrawCircle(bird.position.x, bird.position.y, bird.radius, GREEN);
+	DrawRectangleV(bird.position, bird.size, ORANGE); // x, y, width, height, color
+	DrawCircleV(bird.position, bird.radius, YELLOW);
+	DrawTextEx(font, TextFormat("v0.1"), bird.textPosition, bird.fontSize, bird.spacing, BLACK);
 }
