@@ -14,8 +14,8 @@ namespace rd
 		case Screen::Menu:
 			break;
 		case Screen::Play:
-			PlayerUpdate(delta);
 			ObstacleUpdate(delta);
+			PlayerUpdate(delta);
 			break;
 		case Screen::Rules:
 			break;

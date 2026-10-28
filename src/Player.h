@@ -24,4 +24,5 @@ namespace rd
 	void PlayerInit();
 	void PlayerUpdate(float delta);
 	void PlayerDraw(Font font);
+	void isPlayerAlive();
 }

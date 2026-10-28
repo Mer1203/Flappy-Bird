@@ -30,7 +30,7 @@
     <ClCompile Include="src\Obstacle.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="src\Colission.cpp">
+    <ClCompile Include="src\Collision.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
   </ItemGroup>

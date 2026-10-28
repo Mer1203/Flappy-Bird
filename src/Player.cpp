@@ -1,5 +1,8 @@
 #include "Player.h"
+#include "raylib.h"
 #include "RunGame.h"
+#include "Obstacle.h"
+#include "Collision.h"
 
 namespace rd
 {
@@ -26,6 +29,8 @@ namespace rd
 
 	void PlayerUpdate(float delta)
 	{
+		isPlayerAlive();
+
 		if (IsKeyDown(KEY_UP))
 		{
 			bird.position.y -= delta * MAX_PLAYER_SPEED;
@@ -50,5 +55,14 @@ namespace rd
 		DrawRectangleV(bird.position, bird.size, ORANGE); // x, y, width, height, color
 		DrawCircleV(bird.position, bird.radius, YELLOW);
 		DrawTextEx(font, TextFormat("v0.1"), bird.textPosition, bird.fontSize, bird.spacing, BLACK);
+	}
+
+	void isPlayerAlive()
+	{
+		if (CheckRectangleCollision(bird.position, bird.size, pipe.position, pipe.size))
+		{
+			PlayerInit(); 
+			ObstacleInit();
+		}
 	}
 }
