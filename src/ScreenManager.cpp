@@ -3,6 +3,7 @@
 #include "Player.h"
 #include "Obstacle.h"
 #include "Button.h"
+#include "ScreenMenu.h"
 
 namespace rd
 {
@@ -13,8 +14,7 @@ namespace rd
 		switch (currentScreen)
 		{
 		case Screen::Menu:
-			ButtonInit();
-			IsMousePressed();
+			MenuInit();
 			break;
 		case Screen::Play:
 			ObstacleUpdate(delta);
@@ -44,8 +44,7 @@ namespace rd
 		switch (currentScreen)
 		{
 		case Screen::Menu:
-			ButtonDraw();
-			ButtonTextDraw(font);
+			MenuDraw(font);
 			break;
 		case Screen::Play:
 			PlayerDraw(font);
