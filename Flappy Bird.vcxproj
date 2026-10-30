@@ -163,6 +163,7 @@
     <ClCompile Include="src\Player.cpp" />
     <ClCompile Include="src\RunGame.cpp" />
     <ClCompile Include="src\ScreenCredits.cpp" />
+    <ClCompile Include="src\ScreenExit.cpp" />
     <ClCompile Include="src\ScreenManager.cpp" />
     <ClCompile Include="src\ScreenMenu.cpp" />
   </ItemGroup>
@@ -172,6 +173,7 @@
     <ClInclude Include="src\Obstacle.h" />
     <ClInclude Include="src\Player.h" />
     <ClInclude Include="src\RunGame.h" />
+    <ClInclude Include="src\ScreenExit.h" />
     <ClInclude Include="src\ScreenManager.h" />
     <ClInclude Include="src\ScreenMenu.h" />
     <ClInclude Include="src\ScreenCredits.h" />

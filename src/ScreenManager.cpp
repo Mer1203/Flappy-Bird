@@ -5,12 +5,13 @@
 #include "Button.h"
 #include "ScreenMenu.h"
 #include "ScreenCredits.h"
+#include "ScreenExit.h"
 
 namespace rd
 {
 	Screen currentScreen = Screen::Menu;
 
-	void Update(float delta)
+	void Update(float delta, bool gameIsRunning)
 	{
 		switch (currentScreen)
 		{
@@ -29,6 +30,7 @@ namespace rd
 			CreditsInit();
 			break;
 		case Screen::Exit:
+			ExitUpdate(gameIsRunning);
 			break;
 		case Screen::Pause:
 			break;

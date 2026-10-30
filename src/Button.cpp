@@ -33,8 +33,8 @@ namespace rd
 
 		exit.position.x = 530;
 		exit.position.y = 480;
-		exit.textPosition.x = 575;
-		exit.textPosition.y = 395;
+		exit.textPosition.x = 620;
+		exit.textPosition.y = 495;
 		exit.textSize = 40;
 		exit.size.y = 80;
 		exit.size.x = 280;
@@ -114,6 +114,7 @@ namespace rd
 		//DIBUJO BOTONES
 		DrawRectangleV(play.position, play.size, ORANGE);
 		DrawRectangleV(credits.position, credits.size, ORANGE);
+		DrawRectangleV(exit.position, exit.size, ORANGE);
 
 		if (CheckCollisionMouseButton(mousePosition, play.position.x, 
 			play.position.y, play.size.y, play.size.x))
@@ -125,11 +126,17 @@ namespace rd
 		{
 			DrawRectangleV(credits.position, credits.size, YELLOW);
 		}
+		else if (CheckCollisionMouseButton(mousePosition, exit.position.x,
+			exit.position.y, exit.size.y, exit.size.x))
+		{
+			DrawRectangleV(exit.position, exit.size, YELLOW);
+		}
 	}
 
 	void ButtonTextDraw(Font font)
 	{
 		DrawTextEx(font, "PLAY", play.textPosition, play.fontSize, play.spacing, WHITE);
 		DrawTextEx(font, "CREDITS", credits.textPosition, credits.fontSize, credits.spacing, WHITE);
+		DrawTextEx(font, "EXIT", exit.textPosition, exit.fontSize, exit.spacing, WHITE);
 	}
 }

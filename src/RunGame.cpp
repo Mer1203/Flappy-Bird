@@ -10,6 +10,8 @@ namespace rd
 {
 	void RunGame()
 	{
+		bool gameIsRunning = true;
+
 		srand(static_cast<int>(time(nullptr)));
 		float deltaTime = 0;
 
@@ -19,12 +21,12 @@ namespace rd
 		PlayerInit();
 		ObstacleInit();
 
-		while (!WindowShouldClose())
+		while (!WindowShouldClose() && gameIsRunning == true)
 		{
 			ClearBackground(WHITE);
 			deltaTime = GetFrameTime();
 
-			Update(deltaTime);
+			Update(deltaTime, gameIsRunning);
 			Draw(font);
 		}
 
