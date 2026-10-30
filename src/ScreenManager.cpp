@@ -11,7 +11,7 @@ namespace rd
 {
 	Screen currentScreen = Screen::Menu;
 
-	void Update(float delta, bool gameIsRunning)
+	void Update(float delta, bool& gameIsRunning)
 	{
 		switch (currentScreen)
 		{

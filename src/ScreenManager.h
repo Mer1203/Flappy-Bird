@@ -17,6 +17,6 @@ namespace rd
 
 	extern Screen currentScreen;
 
-	void Update(float delta, bool gameIsRunning);
+	void Update(float delta, bool& gameIsRunning);
 	void Draw(Font font);
 }

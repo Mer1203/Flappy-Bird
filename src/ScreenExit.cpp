@@ -1,10 +1,14 @@
 #include "ScreenExit.h"
 #include "raylib.h"
+#include "ScreenManager.h"
 
 namespace rd
 {
 	void ExitUpdate(bool& gameIsRunning)
 	{
-		gameIsRunning = false;
+		if (currentScreen == Screen::Exit)
+		{
+			gameIsRunning = false;
+		}
 	}
 }

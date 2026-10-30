@@ -21,7 +21,7 @@ namespace rd
 		PlayerInit();
 		ObstacleInit();
 
-		while (!WindowShouldClose() && gameIsRunning == true)
+		while (!WindowShouldClose() && gameIsRunning)
 		{
 			ClearBackground(WHITE);
 			deltaTime = GetFrameTime();
