@@ -6,6 +6,8 @@ namespace rd
 {
 	Button play;
 	Button credits;
+	Button exit;
+	Button back;
 
 	void ButtonInit()
 	{
@@ -24,10 +26,30 @@ namespace rd
 		credits.textPosition.x = 575;
 		credits.textPosition.y = 395;
 		credits.textSize = 40;
-		credits.size.y = 80; //height
-		credits.size.x = 280; //width
+		credits.size.y = 80;
+		credits.size.x = 280;
 		credits.fontSize = 60;
 		credits.spacing = 2;
+
+		exit.position.x = 530;
+		exit.position.y = 480;
+		exit.textPosition.x = 575;
+		exit.textPosition.y = 395;
+		exit.textSize = 40;
+		exit.size.y = 80;
+		exit.size.x = 280;
+		exit.fontSize = 60;
+		exit.spacing = 2;
+
+		back.position.x = 0;
+		back.position.y = 0;
+		back.size.y = 70;
+		back.size.x = 70;
+		back.textPosition.x = -40;
+		back.textPosition.y = -20;
+		back.textSize = 20;
+		back.fontSize = 30;
+		back.spacing = 2;
 	}
 
 	bool CheckCollisionMouseButton(Vector2 mousePosition, float buttonX, 
@@ -35,6 +57,19 @@ namespace rd
 	{
 		return buttonX <= mousePosition.x && buttonX + buttonWidth >= mousePosition.x
 			&& mousePosition.y >= buttonY && mousePosition.y <= buttonY + buttonHeight;
+	}
+
+	void IsMousePressingBackButton()
+	{
+		Vector2 mousePosition = GetMousePosition();
+
+		if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
+		{
+			if (CheckCollisionMouseButton(mousePosition, back.position.x, back.position.y, back.size.y, back.size.x))
+			{
+				currentScreen = Screen::Menu;
+			}
+		}
 	}
 
 	void IsMousePressed()
@@ -53,6 +88,22 @@ namespace rd
 			{
 				currentScreen = Screen::Credits;
 			}
+			else if (CheckCollisionMouseButton(mousePosition, exit.position.x, exit.position.y, exit.size.y, exit.size.x))
+			{
+				currentScreen = Screen::Exit;
+			}
+		}
+	}
+
+	void BackButtonDraw()
+	{
+		Vector2 mousePosition = GetMousePosition();
+
+		DrawRectangleV(back.position, back.size, ORANGE);
+
+		if (CheckCollisionMouseButton(mousePosition, back.position.x, back.position.y, back.size.y, back.size.x))
+		{
+			DrawRectangleV(back.position, back.size, YELLOW);
 		}
 	}
 

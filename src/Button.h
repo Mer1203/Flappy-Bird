@@ -15,11 +15,17 @@ namespace rd
 
 	extern Button play;
 	extern Button credits;
+	extern Button exit;
+	extern Button back;
 
 	void ButtonInit();
 	bool CheckCollisionMouseButton(Vector2 mousePosition, float buttonX,
 		float buttonY, float buttonHeight, float buttonWidth);
+
 	void IsMousePressed();
+	void IsMousePressingBackButton();
+
+	void BackButtonDraw();
 	void ButtonDraw();
 	void ButtonTextDraw(Font font);
 }

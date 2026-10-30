@@ -174,7 +174,7 @@
     <ClInclude Include="src\RunGame.h" />
     <ClInclude Include="src\ScreenManager.h" />
     <ClInclude Include="src\ScreenMenu.h" />
-    <ClInclude Include="src\ScrenCredits.h" />
+    <ClInclude Include="src\ScreenCredits.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

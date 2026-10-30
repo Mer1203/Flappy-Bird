@@ -5,14 +5,14 @@ namespace rd
 {
 	struct Credits
 	{
-		Vector2 size;
 		Vector2 textPosition;
 		float fontSize;
 		float spacing;
 	};
 
 	extern Credits name;
+	extern Credits tittleGameDev;
 
 	void CreditsInit();
-	void CreditsDraw();
+	void CreditsDraw(Font font);
 }

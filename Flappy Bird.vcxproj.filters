@@ -65,7 +65,7 @@
     <ClInclude Include="src\ScreenMenu.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="src\ScrenCredits.h">
+    <ClInclude Include="src\ScreenCredits.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>

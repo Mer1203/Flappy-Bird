@@ -4,6 +4,7 @@
 #include "Obstacle.h"
 #include "Button.h"
 #include "ScreenMenu.h"
+#include "ScreenCredits.h"
 
 namespace rd
 {
@@ -25,6 +26,7 @@ namespace rd
 		case Screen::Settings:
 			break;
 		case Screen::Credits:
+			CreditsInit();
 			break;
 		case Screen::Exit:
 			break;
@@ -55,6 +57,7 @@ namespace rd
 		case Screen::Settings:
 			break;
 		case Screen::Credits:
+			CreditsDraw(font);
 			break;
 		case Screen::Exit:
 			break;
