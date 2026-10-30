@@ -31,8 +31,6 @@ namespace rd
 
 	void PlayerUpdate(float delta)
 	{
-		isPlayerAlive();
-
 		if (IsKeyPressed(KEY_SPACE))
 		{
 			bird.velocity = bird.jumpForce;
@@ -44,6 +42,7 @@ namespace rd
 
 		if (bird.position.y + bird.radius > WINDOW_HEIGHT)
 		{
+			bird.isAlive = false;
 			bird.position.y = WINDOW_HEIGHT - bird.radius;
 		}
 		else if (bird.position.y - bird.radius < 0)
@@ -51,6 +50,8 @@ namespace rd
 			bird.velocity = 0;
 			bird.position.y = 0 + bird.radius;
 		}
+
+		isPlayerAlive();
 	}
 
 	void PlayerDraw(Font font)
@@ -63,7 +64,8 @@ namespace rd
 	void isPlayerAlive()
 	{
 		if (CheckRectangleCollision(bird.position, bird.size, pipeOne.position, pipeOne.size) ||
-			CheckRectangleCollision(bird.position, bird.size, pipeTwo.position, pipeTwo.size))
+			CheckRectangleCollision(bird.position, bird.size, pipeTwo.position, pipeTwo.size) ||
+			!bird.isAlive)
 		{
 			PlayerInit();
 			ObstacleInit();
