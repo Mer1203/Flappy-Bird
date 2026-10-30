@@ -51,7 +51,7 @@ namespace rd
 			MenuDraw(font);
 			break;
 		case Screen::Play:
-			PlayerDraw(font);
+			PlayerDraw();
 			ObstacleDraw();
 			break;
 		case Screen::Rules:

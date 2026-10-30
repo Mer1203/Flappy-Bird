@@ -54,11 +54,9 @@ namespace rd
 		isPlayerAlive();
 	}
 
-	void PlayerDraw(Font font)
+	void PlayerDraw()
 	{
 		DrawRectangleV(bird.position, bird.size, ORANGE); // x, y, width, height, color
-	//	DrawCircleV(bird.position, bird.radius, YELLOW);
-		DrawTextEx(font, TextFormat("v0.1"), bird.textPosition, bird.fontSize, bird.spacing, BLACK);
 	}
 
 	void isPlayerAlive()
