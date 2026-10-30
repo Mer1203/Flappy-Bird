@@ -39,6 +39,9 @@
     <ClCompile Include="src\ScreenMenu.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
+    <ClCompile Include="src\ScreenCredits.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\RunGame.h">
@@ -60,6 +63,9 @@
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="src\ScreenMenu.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ScrenCredits.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>

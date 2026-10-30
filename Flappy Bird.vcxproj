@@ -162,6 +162,7 @@
     <ClCompile Include="src\Obstacle.cpp" />
     <ClCompile Include="src\Player.cpp" />
     <ClCompile Include="src\RunGame.cpp" />
+    <ClCompile Include="src\ScreenCredits.cpp" />
     <ClCompile Include="src\ScreenManager.cpp" />
     <ClCompile Include="src\ScreenMenu.cpp" />
   </ItemGroup>
@@ -173,6 +174,7 @@
     <ClInclude Include="src\RunGame.h" />
     <ClInclude Include="src\ScreenManager.h" />
     <ClInclude Include="src\ScreenMenu.h" />
+    <ClInclude Include="src\ScrenCredits.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
