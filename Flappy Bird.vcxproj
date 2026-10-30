@@ -156,6 +156,7 @@
     </Manifest>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Button.cpp" />
     <ClCompile Include="src\Collision.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\Obstacle.cpp" />
@@ -164,6 +165,7 @@
     <ClCompile Include="src\ScreenManager.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Button.h" />
     <ClInclude Include="src\Collision.h" />
     <ClInclude Include="src\Obstacle.h" />
     <ClInclude Include="src\Player.h" />

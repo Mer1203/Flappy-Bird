@@ -2,16 +2,19 @@
 #include "raylib.h"
 #include "Player.h"
 #include "Obstacle.h"
+#include "Button.h"
 
 namespace rd
 {
-	Screen currentScreen = Screen::Play;
+	Screen currentScreen = Screen::Menu;
 
 	void Update(float delta)
 	{
 		switch (currentScreen)
 		{
 		case Screen::Menu:
+			ButtonInit();
+			IsMousePressed();
 			break;
 		case Screen::Play:
 			ObstacleUpdate(delta);
@@ -41,6 +44,8 @@ namespace rd
 		switch (currentScreen)
 		{
 		case Screen::Menu:
+			ButtonDraw();
+			ButtonTextDraw(font);
 			break;
 		case Screen::Play:
 			PlayerDraw(font);
